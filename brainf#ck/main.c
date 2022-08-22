@@ -21,7 +21,7 @@ int main(int argc, char **argv)
 	if (file == NULL)
 	{
 		dprintf(2, "%s not found\n", argv[1]);
-		free(file);
+		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 	/* ensuring all the cells are initialized to zero*/
@@ -38,7 +38,7 @@ int main(int argc, char **argv)
 	{
 		dprintf(2, "not enough memory\n");
 		free_bf();
-		free(file);
+		fclose(file);
 		exit(EXIT_FAILURE);
 	}
 	i = 0;
